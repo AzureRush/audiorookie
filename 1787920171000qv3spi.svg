@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 900 1330" width="900" role="img" aria-label="etk 播出資料更新流程圖：入口判斷後分為 etk 主線、etk_offline 備援、Excel 手動三層退路，最後都收斂到列印資料給 AD 複查">
+        
+  <title>播出資料三層退路</title>
+  <style>
+    text { font-family: "Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif; }
+    .dg-box { fill:#f2f5f7; stroke:#c6d0d8; stroke-width:1.5; }
+    .dg-dia { fill:none; stroke:#5b6873; stroke-width:1.5; }
+    .dg-line { stroke:#5b6873; stroke-width:1.5; fill:none; }
+    .dg-manual { stroke:#a03a24; stroke-width:1.5; fill:none; stroke-dasharray:7 5; }
+    .dg-num { font-family:"Consolas","Menlo",monospace; font-size:12px; font-weight:500; fill:#5b6873; }
+    .dg-t1 { fill:#2b6b58; } .dg-t2 { fill:#96671a; } .dg-t3 { fill:#a03a24; }
+    .dg-label { font-size:13.5px; fill:#141a1f; }
+    .dg-edge { font-size:12px; fill:#5b6873; }
+    .dg-edge-m { font-size:12px; fill:#a03a24; }
+    .dg-ahm { fill:#a03a24; }
+    .dg-title { font-size:19px; font-weight:700; fill:#141a1f; }
+    .dg-key { font-size:12.5px; fill:#5b6873; }
+  </style>
+  <rect x="0" y="-50" width="900" height="1330" fill="#ffffff"/>
+  <text class="dg-title" x="14" y="-20">播出資料三層退路</text>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b6873"></path>
+          </marker>
+          <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path class="dg-ahm" d="M 0 0 L 10 5 L 0 10 z"></path>
+          </marker>
+        </defs>
+
+
+        <!-- 1.1 -->
+        <rect class="dg-box" x="270" y="18" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t1" x="284" y="40">1.1</text>
+        <text class="dg-label" x="284" y="58">雙擊 etk_lan.bat</text>
+
+        <!-- 1.2 decision -->
+        <polygon class="dg-dia" points="280,136 420,96 560,136 420,176"></polygon>
+        <text class="dg-num dg-t1" x="420" y="132" text-anchor="middle">1.2</text>
+        <text class="dg-label" x="420" y="150" text-anchor="middle">連得到 host？</text>
+
+        <!-- 1.3 decision -->
+        <polygon class="dg-dia" points="15,250 120,210 225,250 120,290"></polygon>
+        <text class="dg-num dg-t1" x="120" y="246" text-anchor="middle">1.3</text>
+        <text class="dg-label" x="120" y="264" text-anchor="middle" font-size="12.5">開離線編輯器？</text>
+
+        <!-- 2.1 -->
+        <rect class="dg-box" x="270" y="224" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t1" x="284" y="246">2.1</text>
+        <text class="dg-label" x="284" y="264">開瀏覽器進 etk</text>
+
+        <!-- 2.2 -->
+        <rect class="dg-box" x="270" y="310" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t1" x="284" y="332">2.2</text>
+        <text class="dg-label" x="284" y="350">編輯人工檢查資料</text>
+
+        <!-- 2.3 -->
+        <rect class="dg-box" x="270" y="396" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t1" x="284" y="418">2.3</text>
+        <text class="dg-label" x="284" y="436">模板頁手動覆蓋（PVW → TAKE）</text>
+
+        <!-- 3.1 -->
+        <rect class="dg-box" x="270" y="502" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t2" x="284" y="524">3.1</text>
+        <text class="dg-label" x="284" y="542">啟動 etk-offline.exe</text>
+
+        <!-- 3.2 decision -->
+        <polygon class="dg-dia" points="280,620 420,580 560,620 420,660"></polygon>
+        <text class="dg-num dg-t2" x="420" y="616" text-anchor="middle">3.2</text>
+        <text class="dg-label" x="420" y="634" text-anchor="middle">真的開起來了？</text>
+
+        <!-- 3.3 -->
+        <rect class="dg-box" x="270" y="686" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t2" x="284" y="708">3.3</text>
+        <text class="dg-label" x="284" y="726">編輯人工檢查資料</text>
+
+        <!-- 3.4 -->
+        <rect class="dg-box" x="270" y="772" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t2" x="284" y="794">3.4</text>
+        <text class="dg-label" x="284" y="812">緊急備援手動覆蓋（存檔即生效）</text>
+
+        <!-- 4.1 -->
+        <rect class="dg-box" x="270" y="878" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t3" x="284" y="900">4.1</text>
+        <text class="dg-label" x="284" y="918">開 0501 資料夾＋印出號碼與步驟</text>
+
+        <!-- 4.2 -->
+        <rect class="dg-box" x="270" y="964" width="300" height="52" rx="4"></rect>
+        <text class="dg-num dg-t3" x="284" y="986">4.2</text>
+        <text class="dg-label" x="284" y="1004">打開對應 .xls，key 數字後存檔</text>
+
+        <!-- 5.1 -->
+        <rect class="dg-box" x="270" y="1054" width="300" height="52" rx="4"></rect>
+        <text class="dg-num" x="284" y="1076">5.1</text>
+        <text class="dg-label" x="284" y="1094">列印資料給 AD 複查</text>
+
+        <!-- 5.2 -->
+        <rect class="dg-box" x="270" y="1140" width="300" height="52" rx="4" stroke-dasharray="6 4"></rect>
+        <text class="dg-num dg-t3" x="284" y="1162">5.2</text>
+        <text class="dg-label" x="284" y="1180" font-size="12.5">（走 Excel 時）告知 AD 改用 Excel 抓</text>
+
+        <!-- edges: spine -->
+        <path class="dg-line" d="M 420 70 L 420 96" marker-end="url(#ah)"></path>
+        <path class="dg-line" d="M 420 176 L 420 224" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="430" y="204">可</text>
+
+        <path class="dg-line" d="M 420 276 L 420 310" marker-end="url(#ah)"></path>
+        <path class="dg-line" d="M 420 362 L 420 396" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="430" y="386">不可用</text>
+
+        <path class="dg-manual" d="M 420 448 L 420 502" marker-end="url(#ahm)"></path>
+        <text class="dg-edge-m" x="430" y="480">失效</text>
+
+        <path class="dg-line" d="M 420 554 L 420 580" marker-end="url(#ah)"></path>
+        <path class="dg-line" d="M 420 660 L 420 686" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="430" y="678">是</text>
+        <path class="dg-line" d="M 420 738 L 420 772" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="430" y="762">不可用</text>
+
+        <path class="dg-manual" d="M 420 824 L 420 878" marker-end="url(#ahm)"></path>
+        <text class="dg-edge-m" x="430" y="856">失效</text>
+
+        <path class="dg-line" d="M 420 930 L 420 964" marker-end="url(#ah)"></path>
+        <path class="dg-line" d="M 420 1016 L 420 1054" marker-end="url(#ah)"></path>
+        <path class="dg-line" d="M 420 1106 L 420 1140" marker-end="url(#ah)"></path>
+
+        <!-- 1.2 -> 1.3 -->
+        <path class="dg-line" d="M 280 136 L 120 136 L 120 210" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="196" y="128" text-anchor="middle">否／無法判斷</text>
+
+        <!-- 1.3 -> 2.1 (N) -->
+        <path class="dg-line" d="M 225 250 L 270 250" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="247" y="240" text-anchor="middle">N</text>
+
+        <!-- 1.3 -> 3.1 (Y) -->
+        <path class="dg-line" d="M 120 290 L 120 528 L 270 528" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="130" y="318">Y</text>
+
+        <!-- 3.2 no -> 4.1 -->
+        <path class="dg-line" d="M 280 620 L 170 620 L 170 904 L 270 904" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="160" y="762" text-anchor="middle" transform="rotate(-90 160 762)">否：沒開起來</text>
+
+        <!-- success rail -->
+        <path class="dg-line" d="M 570 336 L 650 336"></path>
+        <path class="dg-line" d="M 570 422 L 650 422"></path>
+        <path class="dg-line" d="M 570 712 L 650 712"></path>
+        <path class="dg-line" d="M 570 798 L 650 798"></path>
+        <path class="dg-line" d="M 650 336 L 650 1080 L 570 1080" marker-end="url(#ah)"></path>
+        <text class="dg-edge" x="664" y="566" transform="rotate(-90 664 566)" text-anchor="middle">資料 OK</text>
+      
+        <line x1="14" y1="1245" x2="54" y2="1245" stroke="#5b6873" stroke-width="1.5"/>
+        <text class="dg-key" x="64" y="1249">實線＝系統自動帶你走</text>
+        <line x1="270" y1="1245" x2="310" y2="1245" stroke="#a03a24" stroke-width="1.5" stroke-dasharray="7 5"/>
+        <text class="dg-key" x="320" y="1249">虛線＝人工，系統不會提醒</text>
+        <text class="dg-key" x="590" y="1249">編號顏色＝第幾層</text>
+      </svg>
